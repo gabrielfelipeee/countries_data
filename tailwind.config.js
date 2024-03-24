@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
     screens: {
-      'sm': '361px',
+      'sm': '375px',
       'md': '768px',
       'lg': '1440px'
     },
