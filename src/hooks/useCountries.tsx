@@ -20,16 +20,12 @@ const useCountries = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const countriesData = [];
-                for (let i = 0; i <= 249; i++) {
-                    const response = await fetch(`http://localhost:3000/${i}`);
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch data for country with index ${i}`);
-                    };
-                    const data = await response.json();
-                    countriesData.push(data);
-                }
-                setData(countriesData);
+                const response = await fetch('https://raw.githubusercontent.com/gabrielfelipeee/countries_data_api/main/db.json');
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data for country with index");
+                };
+                const data = await response.json();
+                setData(data)
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -48,17 +44,12 @@ const useCountries = () => {
         setCountries(filteredCountries);
     }, [data, search, selectedContinent, setCountries]);
 
-    const formatNumberEUA = (num: number) => {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
     return {
         countries,
         search,
         setSearch,
         selectedContinent,
         setSelectedContinent,
-        formatNumberEUA,
     }
 };
 export default useCountries;

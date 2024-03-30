@@ -1,0 +1,3 @@
+.list_languages li:not(:last-child)::after {
+    content: ',';
+}
