@@ -33,7 +33,7 @@ const useCountries = () => {
         if (!data.length) {
             fetchData();
         }
-    }, [data]);
+    }, []);
 
     useEffect(() => {
         let filteredCountries = data.filter(item => item.name.toLowerCase().startsWith(search.toLowerCase()));
