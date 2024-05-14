@@ -1,11 +1,14 @@
 import Search from "../../components/Search";
 import ListDropDown from "../../components/ListDropDown";
 import Card from "../../components/Card";
+import { ICountry } from "../../interfaces/ICountry";
 import useCountries from "../../hooks/useCountries";
+import useCountriesData from "../../hooks/useCountriesData";
 
 
 const Home = () => {
     const { countries } = useCountries();
+    const { isLoading } = useCountriesData();
 
     return (
         <main className="p-8">
@@ -14,8 +17,11 @@ const Home = () => {
                 <ListDropDown />
             </section>
             <section className="flex flex-wrap gap-8 justify-center max-w-[1400px] m-auto mt-20">
-                {countries.map(item =>
-                    <Card {...item} key={item.name}/>)}
+                {
+                    isLoading
+                        ? <div className="loading"></div>
+                        : countries?.map((item: ICountry) => <Card {...item} key={item.name} />)
+                }
             </section>
         </main>
     )

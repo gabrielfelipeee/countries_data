@@ -20,6 +20,9 @@ export default {
         bg_light_mode: 'hsl(0, 0%, 98%)',
         dark_text_and_light_elements: 'hsl(0, 0%, 100%)',
       },
+      animation: {
+        'loading': 'loading 1s infinite'
+      }
     },
     fontFamily: {
       nunito_sans: ['Nunito Sans', 'sans-serif'],

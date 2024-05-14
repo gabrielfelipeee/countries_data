@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { CountriesProvider } from "./components/context/CountriesContext";
+import { CountriesProvider } from "./context/CountriesContext";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";

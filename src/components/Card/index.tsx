@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ICountry } from "../../shares/interface/ICountry";
+import { ICountry } from "../../interfaces/ICountry";
 import { formatNumberEUA } from "../../utils/formatNumberEUA";
 
 const Card = ({ flags, name, population, region, capital, alpha3Code}: ICountry) => {

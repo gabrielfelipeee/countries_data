@@ -8,3 +8,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@layer utilities {
+    .loading {
+        @apply border-4 border-light_input border-t-bg_light_mode rounded-full w-12 h-12 animate-loading;
+    }
+
+    @keyframes loading {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+}
